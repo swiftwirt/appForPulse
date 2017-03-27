@@ -23,16 +23,16 @@ class PTALibraryService {
         completionHandler(APIResult.success(success))
     }
     
-    func updateLibraryWith(_ recipeInfo: RecipeInfo)
+    func updateLibraryWith(_ recipeEntity: RecipeEntity)
     {
-        let predicate = NSPredicate(format: "title == %@", recipeInfo.title!)// TODO: Remove force unwrapping
+        let predicate = NSPredicate(format: "title == %@", recipeEntity.title!)// TODO: Remove force unwrapping
         guard let _ = RecipeEntity.mr_findAll(with: predicate) as? [RecipeEntity] else {
             let recipe = RecipeEntity.mr_createEntity()
-            recipe?.title = recipeInfo.title
-            recipe?.deepLink = recipeInfo.deepLink
-            recipe?.details = recipeInfo.details
-            recipe?.imageThumbnail = recipeInfo.imageThumbnail
-            recipe?.image = recipeInfo.image
+            recipe?.title = recipeEntity.title
+            recipe?.deepLink = recipeEntity.deepLink
+            recipe?.details = recipeEntity.details
+            recipe?.imageThumbnail = recipeEntity.imageThumbnail
+            recipe?.image = recipeEntity.image
             return
         }
     }

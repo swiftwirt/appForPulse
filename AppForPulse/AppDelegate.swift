@@ -17,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         applicationManager.handleExternalResources()
+        
+        let navigationController = window?.rootViewController as! UINavigationController
+        let mainScreenViewController = navigationController.viewControllers[0] as! PTAMailScreenViewController
+        mainScreenViewController.applicationManager = applicationManager
+        
         return true
     }
 }
