@@ -20,6 +20,9 @@
 		D0EFBD761E8959EF0009CFBA /* PTAApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD741E8959EF0009CFBA /* PTAApplicationManager.swift */; };
 		D0EFBD771E8959EF0009CFBA /* PTAExternalsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD751E8959EF0009CFBA /* PTAExternalsConfigurator.swift */; };
 		D0EFBD851E8990180009CFBA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD831E8990180009CFBA /* Model.xcdatamodeld */; };
+		D0EFBD8E1E8A37EC0009CFBA /* PTARecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD8D1E8A37EC0009CFBA /* PTARecipeCell.swift */; };
+		D0EFBDA11E8A5F2F0009CFBA /* RecipeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD9F1E8A5F2F0009CFBA /* RecipeEntity+CoreDataClass.swift */; };
+		D0EFBDA21E8A5F2F0009CFBA /* RecipeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBDA01E8A5F2F0009CFBA /* RecipeEntity+CoreDataProperties.swift */; };
 		F67DD0205E4CE3218625706A /* Pods_AppForPulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7956310BF81C9F5675475C8 /* Pods_AppForPulse.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +45,9 @@
 		D0EFBD751E8959EF0009CFBA /* PTAExternalsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAExternalsConfigurator.swift; sourceTree = "<group>"; };
 		D0EFBD821E8980CC0009CFBA /* AppForPulse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppForPulse-Bridging-Header.h"; sourceTree = "<group>"; };
 		D0EFBD841E8990180009CFBA /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		D0EFBD8D1E8A37EC0009CFBA /* PTARecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTARecipeCell.swift; sourceTree = "<group>"; };
+		D0EFBD9F1E8A5F2F0009CFBA /* RecipeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecipeEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D0EFBDA01E8A5F2F0009CFBA /* RecipeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecipeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F7956310BF81C9F5675475C8 /* Pods_AppForPulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppForPulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -163,6 +169,8 @@
 		D0EFBD671E8959810009CFBA /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				D0EFBD9F1E8A5F2F0009CFBA /* RecipeEntity+CoreDataClass.swift */,
+				D0EFBDA01E8A5F2F0009CFBA /* RecipeEntity+CoreDataProperties.swift */,
 				D0EFBD831E8990180009CFBA /* Model.xcdatamodeld */,
 			);
 			name = "Core Data";
@@ -183,6 +191,7 @@
 			children = (
 				D0EFBD701E8959D30009CFBA /* PTAMainScreen.storyboard */,
 				D0EFBD711E8959D30009CFBA /* PTAMailScreenViewController.swift */,
+				D0EFBD8D1E8A37EC0009CFBA /* PTARecipeCell.swift */,
 			);
 			name = "Main Screen";
 			sourceTree = "<group>";
@@ -316,8 +325,11 @@
 				D0EFBD761E8959EF0009CFBA /* PTAApplicationManager.swift in Sources */,
 				D0EFBD6E1E89599D0009CFBA /* PTALibraryService.swift in Sources */,
 				D0A2B00D1E89574F0065F24A /* AppDelegate.swift in Sources */,
+				D0EFBD8E1E8A37EC0009CFBA /* PTARecipeCell.swift in Sources */,
 				D0EFBD631E89595D0009CFBA /* CoreDataTableViewController.swift in Sources */,
+				D0EFBDA11E8A5F2F0009CFBA /* RecipeEntity+CoreDataClass.swift in Sources */,
 				D0EFBD851E8990180009CFBA /* Model.xcdatamodeld in Sources */,
+				D0EFBDA21E8A5F2F0009CFBA /* RecipeEntity+CoreDataProperties.swift in Sources */,
 				D0EFBD6D1E89599D0009CFBA /* PTAAPIService.swift in Sources */,
 				D0EFBD611E8959570009CFBA /* Reachability.swift in Sources */,
 			);

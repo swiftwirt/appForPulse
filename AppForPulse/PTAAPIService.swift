@@ -39,9 +39,9 @@ class PTAAPIService {
         libraryService.searchRecipesInLibrary(title: title, completionHandler: completionHandler)
     }
     
-    func updateLibraryWith(_ recipeEntity: RecipeEntity)
+    func updateLibraryWith(_ dictionary: [String: Any])
     {
-        libraryService.updateLibraryWith(recipeEntity)
+        libraryService.updateLibraryWith(dictionary)
     }
 }
 

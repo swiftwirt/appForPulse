@@ -29,9 +29,23 @@ class PTAApplicationManager {
         
     }()
     
+    lazy var isFirstLaunch: Bool = {
+        let userDefaults = UserDefaults.standard
+        let firstTime = userDefaults.bool(forKey: "FirstTime")
+        if firstTime {
+            userDefaults.set(false, forKey: "FirstTime")
+            userDefaults.synchronize()
+        }
+        return firstTime
+    }()
+    
     func handleExternalResources()
     {
         exterlansConfigurator.handleExternals()
     }
     
+    func registerDefaults() {
+        let dictionary = ["FirstTime": true] as [String : Any]
+        UserDefaults.standard.register(defaults: dictionary)
+    }
 }

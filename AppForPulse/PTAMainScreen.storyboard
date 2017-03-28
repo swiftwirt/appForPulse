@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Recipe Labs-->
         <scene sceneID="3NN-iZ-dge">
             <objects>
                 <tableViewController id="6yt-9f-A0Y" customClass="PTAMailScreenViewController" customModule="AppForPulse" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,30 +17,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="jbW-Y9-dKb">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                        </textField>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PTARecipeCell" textLabel="xwP-D8-blf" detailTextLabel="7ve-9Q-R04" style="IBUITableViewCellStyleSubtitle" id="QGW-xO-OEK">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PTARecipeCell" rowHeight="60" id="QGW-xO-OEK" customClass="PTARecipeCell" customModule="AppForPulse" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="58" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QGW-xO-OEK" id="9HC-29-Ewr">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xwP-D8-blf">
-                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image_available_icon" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-vV-Yd1">
+                                            <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="DnE-mu-Juw"/>
+                                                <constraint firstAttribute="height" constant="40" id="jZp-XX-Toh"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYz-Tp-atf">
+                                            <rect key="frame" x="58" y="10" width="309" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="EHe-RD-8Rz"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7ve-9Q-R04">
-                                            <rect key="frame" x="15" y="25.5" width="33" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2A-Vn-vfz">
+                                            <rect key="frame" x="58" y="34" width="309" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="J2A-Vn-vfz" firstAttribute="leading" secondItem="eKc-vV-Yd1" secondAttribute="trailing" constant="8" id="A2f-Hx-GvB"/>
+                                        <constraint firstItem="gYz-Tp-atf" firstAttribute="leading" secondItem="eKc-vV-Yd1" secondAttribute="trailing" constant="8" id="Cab-FB-2ac"/>
+                                        <constraint firstItem="eKc-vV-Yd1" firstAttribute="leading" secondItem="9HC-29-Ewr" secondAttribute="leading" constant="10" id="P2f-fx-c7S"/>
+                                        <constraint firstAttribute="trailing" secondItem="gYz-Tp-atf" secondAttribute="trailing" constant="8" id="Ua7-mb-oRr"/>
+                                        <constraint firstAttribute="bottom" secondItem="J2A-Vn-vfz" secondAttribute="bottom" constant="8" id="YeU-GT-OET"/>
+                                        <constraint firstItem="gYz-Tp-atf" firstAttribute="top" secondItem="9HC-29-Ewr" secondAttribute="top" constant="10" id="gdy-vU-Hsm"/>
+                                        <constraint firstAttribute="trailing" secondItem="J2A-Vn-vfz" secondAttribute="trailing" constant="8" id="id5-7k-5ld"/>
+                                        <constraint firstItem="J2A-Vn-vfz" firstAttribute="top" secondItem="gYz-Tp-atf" secondAttribute="bottom" constant="3" id="lQ8-vr-Hvh"/>
+                                        <constraint firstItem="eKc-vV-Yd1" firstAttribute="centerY" secondItem="9HC-29-Ewr" secondAttribute="centerY" id="m2x-kE-7Jm"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="detailsLabel" destination="J2A-Vn-vfz" id="41C-jD-A43"/>
+                                    <outlet property="imgView" destination="eKc-vV-Yd1" id="zUL-hB-cWh"/>
+                                    <outlet property="titleLabel" destination="gYz-Tp-atf" id="PaC-lL-4G4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -48,11 +79,14 @@
                             <outlet property="delegate" destination="6yt-9f-A0Y" id="5cI-oV-njd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="aLI-y5-WkU"/>
+                    <navigationItem key="navigationItem" title="Recipe Labs" id="aLI-y5-WkU"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="jbW-Y9-dKb" id="Kuj-EI-aGk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOB-2B-rfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="308" y="81"/>
+            <point key="canvasLocation" x="308" y="80.50974512743629"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MFc-L0-fVz">
@@ -61,6 +95,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gsu-Uo-tiV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.75686274509999996" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="6yt-9f-A0Y" kind="relationship" relationship="rootViewController" id="IUi-sE-Vam"/>
@@ -71,4 +106,7 @@
             <point key="canvasLocation" x="-394" y="81"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="no_image_available_icon" width="100" height="100"/>
+    </resources>
 </document>
