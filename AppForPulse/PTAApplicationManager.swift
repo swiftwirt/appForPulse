@@ -8,10 +8,20 @@
 
 import UIKit
 
+enum ReachabilityStatus {
+    case notReachable
+    case reachableViaCell
+    case reachableViaWifi
+}
+
 class PTAApplicationManager {
     
-    private var exterlansConfigurator = PTAExternalsConfigurator()
+    var exterlansConfigurator = PTAExternalsConfigurator()
+    var reachabilityStatus = ReachabilityStatus.notReachable
     
+    let reachability = Reachability()!
+
+
     // MARK: - Made for cases when we can't use dependancy injection
     static func instance() -> PTAApplicationManager
     {
@@ -29,23 +39,36 @@ class PTAApplicationManager {
         
     }()
     
-    lazy var isFirstLaunch: Bool = {
-        let userDefaults = UserDefaults.standard
-        let firstTime = userDefaults.bool(forKey: "FirstTime")
-        if firstTime {
-            userDefaults.set(false, forKey: "FirstTime")
-            userDefaults.synchronize()
+    func configureReachability()
+    {
+        reachability.whenReachable = { reachability in
+            DispatchQueue.main.async {
+                if reachability.isReachableViaWiFi {
+                    self.reachabilityStatus = .reachableViaWifi
+                } else if reachability.isReachableViaWWAN {
+                    self.reachabilityStatus = .reachableViaCell
+                }
+                print("Reachability now \(self.reachabilityStatus) :-)")
+            }
         }
-        return firstTime
-    }()
+        reachability.whenUnreachable = { reachability in
+            DispatchQueue.main.async {
+                self.reachabilityStatus = .notReachable
+                print("Reachability now \(self.reachabilityStatus) :-(")
+            }
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+            self.reachabilityStatus = .reachableViaWifi
+        }
+    }
     
     func handleExternalResources()
     {
         exterlansConfigurator.handleExternals()
-    }
-    
-    func registerDefaults() {
-        let dictionary = ["FirstTime": true] as [String : Any]
-        UserDefaults.standard.register(defaults: dictionary)
+        configureReachability()
     }
 }

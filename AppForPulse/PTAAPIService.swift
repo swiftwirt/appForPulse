@@ -29,16 +29,6 @@ class PTAAPIService {
         restAPIService.searchRecipesBy(title: title, completionHandler: completionHandler)
     }
     
-    func getAllListRecipesFromLibrary(_ completionHandler: @escaping (APIResult<Any>) -> Void)
-    {
-        libraryService.getAllRecipesFromLibrary(completionHandler)
-    }
-    
-    func searchRecipesInLibrary(title: String, completionHandler: @escaping (APIResult<Any>) -> Void)
-    {
-        libraryService.searchRecipesInLibrary(title: title, completionHandler: completionHandler)
-    }
-    
     func updateLibraryWith(_ dictionary: [String: Any])
     {
         libraryService.updateLibraryWith(dictionary)

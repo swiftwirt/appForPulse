@@ -23,6 +23,9 @@
 		D0EFBD8E1E8A37EC0009CFBA /* PTARecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD8D1E8A37EC0009CFBA /* PTARecipeCell.swift */; };
 		D0EFBDA11E8A5F2F0009CFBA /* RecipeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD9F1E8A5F2F0009CFBA /* RecipeEntity+CoreDataClass.swift */; };
 		D0EFBDA21E8A5F2F0009CFBA /* RecipeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBDA01E8A5F2F0009CFBA /* RecipeEntity+CoreDataProperties.swift */; };
+		D0EFBDA41E8A8E0C0009CFBA /* PTAMainScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBDA31E8A8E0C0009CFBA /* PTAMainScreenConfigurator.swift */; };
+		D0EFBDA61E8A8E870009CFBA /* PTAMainScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBDA51E8A8E870009CFBA /* PTAMainScreenPresenter.swift */; };
+		D0EFBDA81E8A8F320009CFBA /* PTAMainScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBDA71E8A8F320009CFBA /* PTAMainScreenInteractor.swift */; };
 		F67DD0205E4CE3218625706A /* Pods_AppForPulse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7956310BF81C9F5675475C8 /* Pods_AppForPulse.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,9 @@
 		D0EFBD8D1E8A37EC0009CFBA /* PTARecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTARecipeCell.swift; sourceTree = "<group>"; };
 		D0EFBD9F1E8A5F2F0009CFBA /* RecipeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecipeEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D0EFBDA01E8A5F2F0009CFBA /* RecipeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RecipeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D0EFBDA31E8A8E0C0009CFBA /* PTAMainScreenConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAMainScreenConfigurator.swift; sourceTree = "<group>"; };
+		D0EFBDA51E8A8E870009CFBA /* PTAMainScreenPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAMainScreenPresenter.swift; sourceTree = "<group>"; };
+		D0EFBDA71E8A8F320009CFBA /* PTAMainScreenInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAMainScreenInteractor.swift; sourceTree = "<group>"; };
 		F7956310BF81C9F5675475C8 /* Pods_AppForPulse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppForPulse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -190,7 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				D0EFBD701E8959D30009CFBA /* PTAMainScreen.storyboard */,
+				D0EFBDA31E8A8E0C0009CFBA /* PTAMainScreenConfigurator.swift */,
 				D0EFBD711E8959D30009CFBA /* PTAMailScreenViewController.swift */,
+				D0EFBDA51E8A8E870009CFBA /* PTAMainScreenPresenter.swift */,
+				D0EFBDA71E8A8F320009CFBA /* PTAMainScreenInteractor.swift */,
 				D0EFBD8D1E8A37EC0009CFBA /* PTARecipeCell.swift */,
 			);
 			name = "Main Screen";
@@ -326,12 +335,15 @@
 				D0EFBD6E1E89599D0009CFBA /* PTALibraryService.swift in Sources */,
 				D0A2B00D1E89574F0065F24A /* AppDelegate.swift in Sources */,
 				D0EFBD8E1E8A37EC0009CFBA /* PTARecipeCell.swift in Sources */,
+				D0EFBDA61E8A8E870009CFBA /* PTAMainScreenPresenter.swift in Sources */,
 				D0EFBD631E89595D0009CFBA /* CoreDataTableViewController.swift in Sources */,
 				D0EFBDA11E8A5F2F0009CFBA /* RecipeEntity+CoreDataClass.swift in Sources */,
 				D0EFBD851E8990180009CFBA /* Model.xcdatamodeld in Sources */,
 				D0EFBDA21E8A5F2F0009CFBA /* RecipeEntity+CoreDataProperties.swift in Sources */,
 				D0EFBD6D1E89599D0009CFBA /* PTAAPIService.swift in Sources */,
+				D0EFBDA81E8A8F320009CFBA /* PTAMainScreenInteractor.swift in Sources */,
 				D0EFBD611E8959570009CFBA /* Reachability.swift in Sources */,
+				D0EFBDA41E8A8E0C0009CFBA /* PTAMainScreenConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

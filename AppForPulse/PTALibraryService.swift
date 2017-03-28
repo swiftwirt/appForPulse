@@ -11,19 +11,6 @@ import SDWebImage
 
 class PTALibraryService {
     
-    func getAllRecipesFromLibrary(_ completionHandler: @escaping (APIResult<Any>) -> Void)
-    {
-        guard let success = RecipeEntity.mr_findAllSorted(by: "title", ascending: true) as? [RecipeEntity] else { completionHandler(APIResult.failure(fatalError() as! Error)) } // TODO: fix that
-        completionHandler(APIResult.success(success))
-    }
-    
-    func searchRecipesInLibrary(title: String, completionHandler: @escaping (APIResult<Any>) -> Void)
-    {
-        let predicate = NSPredicate(format: "ANY title CONTAINS[c] %@", title)
-        guard let success = RecipeEntity.mr_findAll(with: predicate) as? [RecipeEntity] else { completionHandler(APIResult.failure(fatalError() as! Error)) } // TODO: fix that
-        completionHandler(APIResult.success(success))
-    }
-    
     func updateLibraryWith(_ dictionary: [String: Any])
     {
         let predicate = NSPredicate(format: "title == %@", dictionary["title"] as! String) // TODO: See if it works

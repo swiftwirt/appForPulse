@@ -17,29 +17,24 @@ class PTAMailScreenViewController: CoreDataTableViewController, UITextFieldDeleg
     
     var applicationManager: PTAApplicationManager!
     
+    var output: PTAMainScreenInteractor!
+    
     var searchText: String? {
         didSet {
-          applicationManager.apiService.searchRecipesInRemoteBy(title: searchText!) { (result) in
-            switch result {
-            case .success(let value):
-                print(value)
-                if let dictionary = value as? [String : Any] {
-                    self.parseJSON(dictionary)
-                }
-            case .failure(let error):
-                print(error)
-            }
-            }
+            searchWith(searchText!)
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        PTAMainScreenConfigurator.sharedInstance.configure(self)
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
         
-        getDefaultJSONDictionary()
+        getDefaultList()
+        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RecipeEntity")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: .mr_default(), sectionNameKeyPath: nil, cacheName: nil)
@@ -53,26 +48,14 @@ class PTAMailScreenViewController: CoreDataTableViewController, UITextFieldDeleg
         return cell
     }
     
-    private func getDefaultJSONDictionary()
+    func getDefaultList()
     {
-        applicationManager.apiService.getDefaultListRecipesFromRemote { (result) in
-            switch(result) {
-            case .success(let value):
-                print(value)
-                if let dictionary = value as? [String : Any] {
-                    self.parseJSON(dictionary)
-                }
-            case .failure(let error):
-                print("****** error from parseJSON: \(error)")
-            }
-        }
+        output.getDefaultList()
     }
     
-    private func parseJSON(_ dictionary: [String: Any])
+    func searchWith(_ title: String)
     {
-        for result in dictionary["results"] as! [[String: Any]] {
-            applicationManager.apiService.updateLibraryWith(result)
-        }
+        output.searchWith(title)
     }
     
     @IBOutlet weak var searchTextField: UITextField! {
@@ -91,7 +74,7 @@ class PTAMailScreenViewController: CoreDataTableViewController, UITextFieldDeleg
     }
     
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        getDefaultJSONDictionary()
+        getDefaultList()
         return true
     }
 }
