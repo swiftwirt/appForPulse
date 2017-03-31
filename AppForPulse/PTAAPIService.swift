@@ -31,6 +31,7 @@ class PTAAPIService {
     
     func updateLibraryWith(_ dictionary: [String: Any])
     {
+        // TODO: neen to be more defensive here
         for result in dictionary["results"] as! [[String: Any]] {
             libraryService.updateLibraryWith(result)
         }

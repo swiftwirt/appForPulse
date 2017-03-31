@@ -196,8 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				D0EFBD701E8959D30009CFBA /* PTAMainScreen.storyboard */,
-				D0EFBDA31E8A8E0C0009CFBA /* PTAMainScreenConfigurator.swift */,
 				D0EFBD711E8959D30009CFBA /* PTAMainScreenViewController.swift */,
+				D0EFBDA31E8A8E0C0009CFBA /* PTAMainScreenConfigurator.swift */,
 				D0EFBDA51E8A8E870009CFBA /* PTAMainScreenPresenter.swift */,
 				D0EFBDA71E8A8F320009CFBA /* PTAMainScreenInteractor.swift */,
 				D0EFBD8D1E8A37EC0009CFBA /* PTARecipeCell.swift */,

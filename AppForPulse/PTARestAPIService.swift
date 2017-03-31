@@ -27,10 +27,11 @@ class PTARestAPIService {
     
     func getDefaultListRecipes(_ completionHandler: @escaping (APIResult<Any>) -> Void)
     {
+        HUD.show(.progress)
+        
         let url = EndPoint.baseUrl.rawValue + EndPoint.defaultUrlSuffix.rawValue
         
         Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: nil).responseJSON { (response: DataResponse<Any>) in
-            HUD.show(.progress)
             switch(response.result) {
             case .success(let value):
                 HUD.flash(.success, delay: 1.0)
@@ -44,12 +45,13 @@ class PTARestAPIService {
     
     func searchRecipesBy(title: String, completionHandler: @escaping (APIResult<Any>) -> Void)
     {
+        HUD.show(.progress)
+        
         let escapedTitle = title.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
         
         let url = EndPoint.baseUrl.rawValue + EndPoint.search.rawValue + escapedTitle!
         
         Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: nil).responseJSON { (response: DataResponse<Any>) in
-            HUD.show(.progress)
             switch(response.result) {
             case .success(let value):
                 HUD.flash(.success, delay: 1.0)

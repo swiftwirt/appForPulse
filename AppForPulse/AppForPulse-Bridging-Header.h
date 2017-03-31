@@ -12,5 +12,6 @@
 #define MR_SHORTHAND
 
 #import <CoreData+MagicalRecord.h>
+#import <SVWebViewController.h>
 
 #endif /* AppForPulse_Bridging_Header_h */

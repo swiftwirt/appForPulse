@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class PTAMainScreenViewController: CoreDataTableViewController, UITextFieldDelegate {
+class PTAMainScreenViewController: CoreDataTableViewController {
     
     struct CellReuseIdentifier {
         static let recipeCell = "PTARecipeCell"
@@ -34,18 +34,27 @@ class PTAMainScreenViewController: CoreDataTableViewController, UITextFieldDeleg
         tableView.estimatedRowHeight = 60
         
         getDefaultList()
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RecipeEntity")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: .mr_default(), sectionNameKeyPath: nil, cacheName: nil)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellReuseIdentifier.recipeCell, for: indexPath) as! PTARecipeCell
-        let recipe = fetchedResultsController?.object(at: indexPath)
-        cell.recipe = recipe as! RecipeEntity!
+        let recipe = fetchedResultsController?.object(at: indexPath) as? RecipeEntity!
+        cell.recipe = recipe
         return cell
+    }
+    
+    // MARK: - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let recipe = fetchedResultsController?.object(at: indexPath) as? RecipeEntity!
+        guard let link = recipe?.deepLink else { return }
+        showWebPage(link)
     }
     
     func getDefaultList()
@@ -58,23 +67,36 @@ class PTAMainScreenViewController: CoreDataTableViewController, UITextFieldDeleg
         output.searchWith(title)
     }
     
-    @IBOutlet weak var searchTextField: UITextField! {
+    func showWebPage(_ link: String)
+    {
+        output.showWebPage(link)
+    }
+    
+    func handleFetch() {
+        output.handleFetch()
+    }
+    
+    @IBOutlet weak var searchBar: UISearchBar! {
         didSet {
-            searchTextField.delegate = self
-            searchTextField.text = searchText
+            searchBar.text = searchText
         }
     }
+}
+
+extension PTAMainScreenViewController: UISearchBarDelegate {
     
-    // MARK: UITextFieldDelegate
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        searchText = textField.text
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let newNSString = searchBar.text as NSString?
+        let newString = newNSString?.replacingCharacters(in: range, with: text)
+        if newString == "" {
+            getDefaultList()
+            searchBar.resignFirstResponder()
+        }
         return true
     }
     
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        getDefaultList()
-        return true
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchText = searchBar.text
     }
 }

@@ -17,16 +17,6 @@ class PTAMainScreenInteractor {
     }()
     
     func getDefaultList() {
-        handleDefaultList()
-    }
-    
-    func searchWith(_ title: String)
-    {
-        handleSearchWith(title)
-    }
-    
-    private func handleDefaultList()
-    {
         let status = applicationManager.reachabilityStatus
         switch status {
         case .reachableViaCell, .reachableViaWifi:
@@ -38,7 +28,7 @@ class PTAMainScreenInteractor {
         }
     }
     
-    private func handleSearchWith(_ title: String)
+    func searchWith(_ title: String)
     {
         let status = applicationManager.reachabilityStatus
         switch status {
@@ -53,7 +43,17 @@ class PTAMainScreenInteractor {
             break
         }
     }
-
+    
+    func showWebPage(_ link: String)
+    {
+        output.showWebPage(link)
+    }
+    
+    func handleFetch()
+    {
+        output.handleFetch()
+    }
+    
     private func searchInRemote(_ searchText: String)
     {
         applicationManager.apiService.searchRecipesInRemoteBy(title: searchText) { (result) in
