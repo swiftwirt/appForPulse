@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 enum ReachabilityStatus {
     case notReachable
@@ -17,7 +18,12 @@ enum ReachabilityStatus {
 class PTAApplicationManager {
     
     var exterlansConfigurator = PTAExternalsConfigurator()
-    var reachabilityStatus = ReachabilityStatus.notReachable
+    
+    var reachabilityStatus = ReachabilityStatus.notReachable {
+        didSet {
+            handleReachability()
+        }
+    }
     
     let reachability = Reachability()!
 
@@ -63,6 +69,24 @@ class PTAApplicationManager {
         } catch {
             print("Unable to start notifier")
             self.reachabilityStatus = .reachableViaWifi
+        }
+    }
+    
+    func handleReachability()
+    {
+        if reachabilityStatus == .notReachable { HUD.hide(); return }
+            apiService.getDefaultListRecipesFromRemote { (result) in
+                switch(result) {
+                case .success(let value):
+                print(value)
+                if let dictionary = value as? [String : Any] {
+                    self.apiService.updateLibraryWith(dictionary)
+                } else {
+                    print("****** Can't get JSON error")
+                }
+                case .failure(let error):
+                print("****** error from getDefaultListRecipesFromRemote: \(error)")
+            }
         }
     }
     

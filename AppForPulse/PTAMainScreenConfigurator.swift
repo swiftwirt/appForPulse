@@ -14,7 +14,7 @@ class PTAMainScreenConfigurator {
         return PTAMainScreenConfigurator()
     }
     
-    func configure(_ viewController: PTAMailScreenViewController) {
+    func configure(_ viewController: PTAMainScreenViewController) {
         
         let presenter = PTAMainScreenPresenter()
         presenter.output = viewController

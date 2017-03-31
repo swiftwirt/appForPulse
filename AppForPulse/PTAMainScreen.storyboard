@@ -12,11 +12,13 @@
         <!--Recipe Labs-->
         <scene sceneID="3NN-iZ-dge">
             <objects>
-                <tableViewController id="6yt-9f-A0Y" customClass="PTAMailScreenViewController" customModule="AppForPulse" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="6yt-9f-A0Y" customClass="PTAMainScreenViewController" customModule="AppForPulse" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zal-oh-FVn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="jbW-Y9-dKb">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -33,14 +35,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image_available_icon" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-vV-Yd1">
-                                            <rect key="frame" x="10" y="10" width="40" height="40"/>
+                                            <rect key="frame" x="10" y="5" width="50" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="40" id="DnE-mu-Juw"/>
-                                                <constraint firstAttribute="height" constant="40" id="jZp-XX-Toh"/>
+                                                <constraint firstAttribute="width" constant="50" id="DnE-mu-Juw"/>
+                                                <constraint firstAttribute="height" constant="50" id="jZp-XX-Toh"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYz-Tp-atf">
-                                            <rect key="frame" x="58" y="10" width="309" height="21"/>
+                                            <rect key="frame" x="68" y="10" width="299" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="EHe-RD-8Rz"/>
                                             </constraints>
@@ -49,7 +51,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2A-Vn-vfz">
-                                            <rect key="frame" x="58" y="34" width="309" height="17"/>
+                                            <rect key="frame" x="68" y="34" width="299" height="17"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -86,16 +88,16 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOB-2B-rfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="81"/>
+            <point key="canvasLocation" x="302" y="81"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MFc-L0-fVz">
             <objects>
                 <navigationController id="dVq-gb-SMF" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gsu-Uo-tiV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gsu-Uo-tiV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.75686274509999996" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="6yt-9f-A0Y" kind="relationship" relationship="rootViewController" id="IUi-sE-Vam"/>

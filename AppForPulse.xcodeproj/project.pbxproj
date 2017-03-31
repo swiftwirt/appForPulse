@@ -16,7 +16,7 @@
 		D0EFBD6D1E89599D0009CFBA /* PTAAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD6A1E89599D0009CFBA /* PTAAPIService.swift */; };
 		D0EFBD6E1E89599D0009CFBA /* PTALibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD6B1E89599D0009CFBA /* PTALibraryService.swift */; };
 		D0EFBD721E8959D30009CFBA /* PTAMainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EFBD701E8959D30009CFBA /* PTAMainScreen.storyboard */; };
-		D0EFBD731E8959D30009CFBA /* PTAMailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD711E8959D30009CFBA /* PTAMailScreenViewController.swift */; };
+		D0EFBD731E8959D30009CFBA /* PTAMainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD711E8959D30009CFBA /* PTAMainScreenViewController.swift */; };
 		D0EFBD761E8959EF0009CFBA /* PTAApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD741E8959EF0009CFBA /* PTAApplicationManager.swift */; };
 		D0EFBD771E8959EF0009CFBA /* PTAExternalsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD751E8959EF0009CFBA /* PTAExternalsConfigurator.swift */; };
 		D0EFBD851E8990180009CFBA /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EFBD831E8990180009CFBA /* Model.xcdatamodeld */; };
@@ -43,7 +43,7 @@
 		D0EFBD6A1E89599D0009CFBA /* PTAAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAAPIService.swift; sourceTree = "<group>"; };
 		D0EFBD6B1E89599D0009CFBA /* PTALibraryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTALibraryService.swift; sourceTree = "<group>"; };
 		D0EFBD701E8959D30009CFBA /* PTAMainScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PTAMainScreen.storyboard; sourceTree = "<group>"; };
-		D0EFBD711E8959D30009CFBA /* PTAMailScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAMailScreenViewController.swift; sourceTree = "<group>"; };
+		D0EFBD711E8959D30009CFBA /* PTAMainScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAMainScreenViewController.swift; sourceTree = "<group>"; };
 		D0EFBD741E8959EF0009CFBA /* PTAApplicationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAApplicationManager.swift; sourceTree = "<group>"; };
 		D0EFBD751E8959EF0009CFBA /* PTAExternalsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAExternalsConfigurator.swift; sourceTree = "<group>"; };
 		D0EFBD821E8980CC0009CFBA /* AppForPulse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppForPulse-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 			children = (
 				D0EFBD701E8959D30009CFBA /* PTAMainScreen.storyboard */,
 				D0EFBDA31E8A8E0C0009CFBA /* PTAMainScreenConfigurator.swift */,
-				D0EFBD711E8959D30009CFBA /* PTAMailScreenViewController.swift */,
+				D0EFBD711E8959D30009CFBA /* PTAMainScreenViewController.swift */,
 				D0EFBDA51E8A8E870009CFBA /* PTAMainScreenPresenter.swift */,
 				D0EFBDA71E8A8F320009CFBA /* PTAMainScreenInteractor.swift */,
 				D0EFBD8D1E8A37EC0009CFBA /* PTARecipeCell.swift */,
@@ -328,7 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0EFBD731E8959D30009CFBA /* PTAMailScreenViewController.swift in Sources */,
+				D0EFBD731E8959D30009CFBA /* PTAMainScreenViewController.swift in Sources */,
 				D0EFBD771E8959EF0009CFBA /* PTAExternalsConfigurator.swift in Sources */,
 				D0EFBD6C1E89599D0009CFBA /* PTARestAPIService.swift in Sources */,
 				D0EFBD761E8959EF0009CFBA /* PTAApplicationManager.swift in Sources */,

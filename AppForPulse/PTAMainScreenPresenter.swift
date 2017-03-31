@@ -11,12 +11,7 @@ import CoreData
 
 class PTAMainScreenPresenter
 {
-    weak var output: PTAMailScreenViewController!
-    
-    func showNoConnectionError()
-    {
-
-    }
+    weak var output: PTAMainScreenViewController!
     
     func fiterLibraryWith(_ predicate: NSPredicate?)
     {

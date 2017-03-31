@@ -61,7 +61,7 @@ class PTAMainScreenInteractor {
             case .success(let value):
                 print(value)
                 if let dictionary = value as? [String : Any] {
-                    self.parseJSONandUpdateLibraryWith(dictionary)
+                    self.applicationManager.apiService.updateLibraryWith(dictionary)
                 }
             case .failure(let error):
                 print("****** error from parseJSON: \(error)")
@@ -76,20 +76,12 @@ class PTAMainScreenInteractor {
             case .success(let value):
                 print(value)
                 if let dictionary = value as? [String : Any] {
-                    self.parseJSONandUpdateLibraryWith(dictionary)
+                    self.applicationManager.apiService.updateLibraryWith(dictionary)
                 }
+                print("****** Can't get JSON error")
             case .failure(let error):
-                print("****** error from parseJSON: \(error)")
+                print("****** error from getDefaultListRecipesFromRemote: \(error)")
             }
         }
     }
-    
-    private func parseJSONandUpdateLibraryWith(_ dictionary: [String: Any])
-    {
-        for result in dictionary["results"] as! [[String: Any]] {
-            applicationManager.apiService.updateLibraryWith(result)
-        }
-    }
-    
-
 }

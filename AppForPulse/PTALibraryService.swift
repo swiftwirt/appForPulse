@@ -19,7 +19,8 @@ class PTALibraryService {
             recipe?.deepLink = dictionary["href"] as! String?
             recipe?.details = dictionary["ingredients"] as! String?
             recipe?.imageThumbnail = dictionary["thumbnail"] as! String?
-            recipe?.title = dictionary["title"] as! String?
+            recipe?.title = (dictionary["title"] as! String?)?.replacingOccurrences(of: "\n", with: "")
+            
             let imageURL = URL(string: dictionary["thumbnail"] as! String)
             let downloader = SDWebImageDownloader.shared()
             downloader.downloadImage(with: imageURL, options: .highPriority, progress: nil, completed: { (image, data, error, completed) in

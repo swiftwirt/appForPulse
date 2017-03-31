@@ -1,5 +1,5 @@
 //
-//  PTAMailScreenViewController.swift
+//  PTAMainScreenViewController.swift
 //  AppForPulse
 //
 //  Created by Ivashin Dmitry on 3/27/17.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class PTAMailScreenViewController: CoreDataTableViewController, UITextFieldDelegate {
+class PTAMainScreenViewController: CoreDataTableViewController, UITextFieldDelegate {
     
     struct CellReuseIdentifier {
         static let recipeCell = "PTARecipeCell"

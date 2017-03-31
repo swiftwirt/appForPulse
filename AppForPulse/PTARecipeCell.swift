@@ -28,7 +28,7 @@ class PTARecipeCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        handleAppearance()
     }
     
     override func prepareForReuse() {
@@ -36,5 +36,14 @@ class PTARecipeCell: UITableViewCell {
         imgView.image = nil
         titleLabel.text = nil
         detailsLabel.text = nil
+    }
+    
+    private func handleAppearance()
+    {
+        imgView.layer.masksToBounds = true
+        imgView.layer.cornerRadius = imgView.frame.width / 2
+        
+        imgView.layer.borderWidth = 1.0
+        imgView.layer.borderColor = UIColor.lightGray.cgColor
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import PKHUD
 
 class PTARestAPIService {
     
@@ -29,11 +30,13 @@ class PTARestAPIService {
         let url = EndPoint.baseUrl.rawValue + EndPoint.defaultUrlSuffix.rawValue
         
         Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: nil).responseJSON { (response: DataResponse<Any>) in
-            
+            HUD.show(.progress)
             switch(response.result) {
             case .success(let value):
+                HUD.flash(.success, delay: 1.0)
                 completionHandler(APIResult.success(value))
             case .failure(let error):
+                HUD.flash(.error, delay: 1.0)
                 completionHandler(APIResult.failure(error))
             }
         }
@@ -41,14 +44,18 @@ class PTARestAPIService {
     
     func searchRecipesBy(title: String, completionHandler: @escaping (APIResult<Any>) -> Void)
     {
-        let url = EndPoint.baseUrl.rawValue + EndPoint.search.rawValue + title
+        let escapedTitle = title.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+        
+        let url = EndPoint.baseUrl.rawValue + EndPoint.search.rawValue + escapedTitle!
         
         Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: nil).responseJSON { (response: DataResponse<Any>) in
-            
+            HUD.show(.progress)
             switch(response.result) {
             case .success(let value):
+                HUD.flash(.success, delay: 1.0)
                 completionHandler(APIResult.success(value))
             case .failure(let error):
+                HUD.flash(.error, delay: 1.0)
                 completionHandler(APIResult.failure(error))
             }
         }

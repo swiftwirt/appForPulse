@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         applicationManager.handleExternalResources()
         
         let navigationController = window?.rootViewController as! UINavigationController
-        let mainScreenViewController = navigationController.viewControllers[0] as! PTAMailScreenViewController
+        let mainScreenViewController = navigationController.viewControllers[0] as! PTAMainScreenViewController
         mainScreenViewController.applicationManager = applicationManager
         
         return true
