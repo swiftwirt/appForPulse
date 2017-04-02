@@ -50,12 +50,25 @@ class PTAMainScreenViewController: CoreDataTableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44.0
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return getSearchBar()
+    }
+    
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recipe = fetchedResultsController?.object(at: indexPath) as? RecipeEntity!
         guard let link = recipe?.deepLink else { return }
         showWebPage(link)
+    }
+    
+    func getSearchBar() -> UIView
+    {
+        return output.getSearchBar()
     }
     
     func getDefaultList()
@@ -75,12 +88,6 @@ class PTAMainScreenViewController: CoreDataTableViewController {
     
     func handleFetch() {
         output.handleFetch()
-    }
-    
-    @IBOutlet weak var searchBar: UISearchBar! {
-        didSet {
-            searchBar.text = searchText
-        }
     }
 }
 

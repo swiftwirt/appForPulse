@@ -21,6 +21,7 @@ class PTAMainScreenInteractor {
         switch status {
         case .reachableViaCell, .reachableViaWifi:
             getDefaultFromRemote()
+            output.fiterLibraryWith(nil)
             break
         case .notReachable:
             output.fiterLibraryWith(nil)
@@ -52,6 +53,11 @@ class PTAMainScreenInteractor {
     func handleFetch()
     {
         output.handleFetch()
+    }
+    
+    func getSearchBar() -> UIView
+    {
+        return output.getSearchBar()
     }
     
     private func searchInRemote(_ searchText: String)
