@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D04A363C1E90D57B0005949B /* PTAMainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A363B1E90D57B0005949B /* PTAMainScreenRouter.swift */; };
+		D04A36401E90E5B90005949B /* PATAlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04A363F1E90E5B90005949B /* PATAlertHandler.swift */; };
 		D0A2B00D1E89574F0065F24A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2B00C1E89574F0065F24A /* AppDelegate.swift */; };
 		D0A2B0141E8957500065F24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0A2B0131E8957500065F24A /* Assets.xcassets */; };
 		D0A2B0171E8957500065F24A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A2B0151E8957500065F24A /* LaunchScreen.storyboard */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		7FC75C9F874380776B36B788 /* Pods-AppForPulse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppForPulse.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppForPulse/Pods-AppForPulse.release.xcconfig"; sourceTree = "<group>"; };
 		94B5E660562C1F8F447A222D /* Pods-AppForPulse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppForPulse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppForPulse/Pods-AppForPulse.debug.xcconfig"; sourceTree = "<group>"; };
+		D04A363B1E90D57B0005949B /* PTAMainScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTAMainScreenRouter.swift; sourceTree = "<group>"; };
+		D04A363F1E90E5B90005949B /* PATAlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PATAlertHandler.swift; sourceTree = "<group>"; };
 		D0A2B0091E89574E0065F24A /* AppForPulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppForPulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A2B00C1E89574F0065F24A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0A2B0131E8957500065F24A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +90,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D04A363E1E90E5920005949B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D04A363F1E90E5B90005949B /* PATAlertHandler.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		D0A2B0001E89574B0065F24A = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +120,7 @@
 		D0A2B00B1E89574F0065F24A /* AppForPulse */ = {
 			isa = PBXGroup;
 			children = (
+				D04A363E1E90E5920005949B /* Helpers */,
 				D0EFBD681E8959840009CFBA /* Services */,
 				D0EFBD671E8959810009CFBA /* Core Data */,
 				D0EFBD661E89597E0009CFBA /* Presentation */,
@@ -200,6 +213,7 @@
 				D0EFBDA31E8A8E0C0009CFBA /* PTAMainScreenConfigurator.swift */,
 				D0EFBDA51E8A8E870009CFBA /* PTAMainScreenPresenter.swift */,
 				D0EFBDA71E8A8F320009CFBA /* PTAMainScreenInteractor.swift */,
+				D04A363B1E90D57B0005949B /* PTAMainScreenRouter.swift */,
 				D0EFBD8D1E8A37EC0009CFBA /* PTARecipeCell.swift */,
 			);
 			name = "Main Screen";
@@ -329,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0EFBD731E8959D30009CFBA /* PTAMainScreenViewController.swift in Sources */,
+				D04A363C1E90D57B0005949B /* PTAMainScreenRouter.swift in Sources */,
 				D0EFBD771E8959EF0009CFBA /* PTAExternalsConfigurator.swift in Sources */,
 				D0EFBD6C1E89599D0009CFBA /* PTARestAPIService.swift in Sources */,
 				D0EFBD761E8959EF0009CFBA /* PTAApplicationManager.swift in Sources */,
@@ -342,6 +357,7 @@
 				D0EFBDA21E8A5F2F0009CFBA /* RecipeEntity+CoreDataProperties.swift in Sources */,
 				D0EFBD6D1E89599D0009CFBA /* PTAAPIService.swift in Sources */,
 				D0EFBDA81E8A8F320009CFBA /* PTAMainScreenInteractor.swift in Sources */,
+				D04A36401E90E5B90005949B /* PATAlertHandler.swift in Sources */,
 				D0EFBD611E8959570009CFBA /* Reachability.swift in Sources */,
 				D0EFBDA41E8A8E0C0009CFBA /* PTAMainScreenConfigurator.swift in Sources */,
 			);

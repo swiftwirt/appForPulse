@@ -18,6 +18,7 @@ class PTAMainScreenViewController: CoreDataTableViewController {
     var applicationManager: PTAApplicationManager!
     
     var output: PTAMainScreenInteractor!
+    var router: PTAMainScreenRouter!
     
     var searchText: String? {
         didSet {
@@ -69,7 +70,7 @@ class PTAMainScreenViewController: CoreDataTableViewController {
     
     func showWebPage(_ link: String)
     {
-        output.showWebPage(link)
+        router.showWebPage(link)
     }
     
     func handleFetch() {
@@ -85,14 +86,11 @@ class PTAMainScreenViewController: CoreDataTableViewController {
 
 extension PTAMainScreenViewController: UISearchBarDelegate {
     
-    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        let newNSString = searchBar.text as NSString?
-        let newString = newNSString?.replacingCharacters(in: range, with: text)
-        if newString == "" {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == "" {
             getDefaultList()
             searchBar.resignFirstResponder()
         }
-        return true
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

@@ -22,6 +22,10 @@ class PTAMainScreenConfigurator {
         let interactor = PTAMainScreenInteractor()
         interactor.output = presenter
         
+        let router = PTAMainScreenRouter()
+        viewController.router = router
+        router.viewController = viewController
+        
         viewController.output = interactor
     }
 }

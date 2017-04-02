@@ -44,9 +44,9 @@ class PTAMainScreenInteractor {
         }
     }
     
-    func showWebPage(_ link: String)
+    func showNoLinkAlert()
     {
-        output.showWebPage(link)
+        output.showNoLinkAlert()
     }
     
     func handleFetch()
